@@ -51,7 +51,7 @@ namespace ConcurrencyControl.Migrations
                     b.ToTable("ConcurrentAccountsWithToken");
                 });
 
-            modelBuilder.Entity("ConcurrencyControl.Models.NonconcurrentAccount", b =>
+            modelBuilder.Entity("ConcurrencyControl.Models.NonConcurrentAccount", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -62,7 +62,7 @@ namespace ConcurrencyControl.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("NonconcurrentAccounts");
+                    b.ToTable("NonConcurrentAccounts");
                 });
 #pragma warning restore 612, 618
         }

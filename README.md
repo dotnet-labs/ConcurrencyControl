@@ -1,4 +1,6 @@
-# Optimistic Concurrency Management in EntityFramework Core
+# Optimistic Concurrency Management in EntityFramework Core (Repository Archived)
+
+## New Repository ([https://github.com/dotnet-labs/ConcurrencyControl](https://github.com/dotnet-labs/ConcurrencyControl))
 
 ## [Medium Article](https://codeburst.io/optimistic-concurrency-management-in-entityframework-core-79a4921067cb)
 

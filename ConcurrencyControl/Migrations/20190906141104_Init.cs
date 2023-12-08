@@ -35,7 +35,7 @@ namespace ConcurrencyControl.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "NonconcurrentAccounts",
+                name: "NonConcurrentAccounts",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -57,7 +57,7 @@ namespace ConcurrencyControl.Migrations
                 name: "ConcurrentAccountsWithToken");
 
             migrationBuilder.DropTable(
-                name: "NonconcurrentAccounts");
+                name: "NonConcurrentAccounts");
         }
     }
 }

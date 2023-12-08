@@ -1,30 +1,27 @@
-﻿using ConcurrencyControl.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ConcurrencyControl.DbContext.Configurations
+namespace ConcurrencyControl.DbContext.Configurations;
+
+internal class NonConcurrentAccountEntityTypeConfigurationSqlite : IEntityTypeConfiguration<NonConcurrentAccount>
 {
-    internal class NonconcurrentAccountEntityTypeConfigurationSqlite : IEntityTypeConfiguration<NonconcurrentAccount>
+    public void Configure(EntityTypeBuilder<NonConcurrentAccount> builder)
     {
-        public void Configure(EntityTypeBuilder<NonconcurrentAccount> builder)
-        {
-            builder.ToTable("NonconcurrentAccounts");
-            builder.HasKey(x => x.Id);
+        builder.ToTable("NonConcurrentAccounts");
+        builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Id).HasColumnName("Id").ValueGeneratedOnAdd();
-            builder.Property(x => x.Balance).HasColumnName("Balance").HasConversion<double>();
-        }
+        builder.Property(x => x.Id).HasColumnName("Id").ValueGeneratedOnAdd();
+        builder.Property(x => x.Balance).HasColumnName("Balance").HasConversion<double>();
     }
+}
 
-    internal class NonconcurrentAccountEntityTypeConfiguration : IEntityTypeConfiguration<NonconcurrentAccount>
+internal class NonConcurrentAccountEntityTypeConfiguration : IEntityTypeConfiguration<NonConcurrentAccount>
+{
+    public void Configure(EntityTypeBuilder<NonConcurrentAccount> builder)
     {
-        public void Configure(EntityTypeBuilder<NonconcurrentAccount> builder)
-        {
-            builder.ToTable("NonconcurrentAccounts");
-            builder.HasKey(x => x.Id);
+        builder.ToTable("NonConcurrentAccounts");
+        builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Id).HasColumnName("Id").ValueGeneratedOnAdd();
-            builder.Property(x => x.Balance).HasColumnName("Balance").HasColumnType("money");
-        }
+        builder.Property(x => x.Id).HasColumnName("Id").ValueGeneratedOnAdd();
+        builder.Property(x => x.Balance).HasColumnName("Balance").HasColumnType("money");
     }
 }
